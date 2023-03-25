@@ -1,0 +1,88 @@
+body{
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+}
+
+#nav{
+    position: fixed;
+    width: 95%;
+    display: flex;
+    top: 0px;
+    margin: -30px 30px 0px 30px;
+    background-color: transparent;
+}
+
+#icon ion-icon{
+    color: white;
+    margin-top: 65px;
+    border: 1px solid rgb(82, 81, 81);
+    height: 30px;
+    width: 30px;
+}
+
+#logo img{
+    width: 40%;
+    margin-left: 10%;
+    margin-bottom: 0px;
+}
+
+.search{
+    margin-top: 65px;
+    margin-left: 30%;
+}
+.search hr{
+    width: 150%;
+    margin: 0px;
+}
+.search a{
+    font-size: 15px;
+    color: white;
+}
+
+.login{
+    margin-left: 22%;
+    margin-top: 55px;
+}
+.login a{
+    font-size: 15px;
+    color: white;
+    margin-right: 10px;
+    margin-top: -20px;
+}
+.login ion-icon{
+    position: relative;
+    top: 5px;
+    color: white;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.login span{
+    color: white;
+    position: relative;
+    top: -1.5px;
+    left: 24.5%;
+}
+
+
+#main{
+    margin-top: 12%;
+}
+.left{
+    border: 1px solid red;
+    margin-left: 8%;
+}
+.left h3{
+    color: white;
+    font-size: 15px;
+}
+.left input,button{
+    display: block;
+    margin-top: 50px;
+    width: 20%;
+    outline: none;
+}
+.left label{
+    color: #ffffff;
+}
