@@ -32,29 +32,31 @@
     <div id="main">
         <h3>PERSONAL DETAILS</h3>
         <form action="">
-            <div>
+            <div class="pass">
                 <label for="email">E-MAIL</label>
-                <input type="email" name="email" id="email">
+                <input type="email" name="email" id="email" placeholder="E-MAIL">
+                <input type="text" name="name" id="name" placeholder="NAME">
             </div>
-            <div>
+            <div class="pass">
                 <label for="password">PASSWORD</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" placeholder="PASSWORD">
+                <input type="password" name="password" id="password" placeholder="REPEAT-PASSWORD">
             </div>
-            <div>
+            <div  class="pass">
                 <label for="address">ADDRESS</label>
-                <input type="text" name="address" id="address">
+                <input type="text" name="address" id="address" placeholder="ADDRESS">
+                <input type="number" name="PIN code" id="pinNumber" placeholder="PIN-NUMBER">
             </div>
-            <div>
+            <div  class="pass">
                 <label for="phoneNo">PHONE-NO</label>
-                <input type="text" name="phoneNo" id="phoneNo">
+                <input type="text" name="phoneNo" id="phoneNo" placeholder="PHONE-NO">
+                <input type="text" name="phoneNo" id="phoneNo" placeholder="Alternate Phone (Optional)">
             </div>
             <div>
                 <input type="checkbox" name="receiveEmail" id="receiveEmail"><span>
                     I wish to receive Zara news on my e-mail</span>
-            </div>
-            <div>
-                <input type="checkbox" name="privacy" id="privacy"><span>
-                    I accept the privacy statement</span>
+                    <input type="checkbox" name="privacy" id="privacy"><span>
+                        I accept the privacy statement</span>
             </div>
             <button id="submit">CREATE ACCOUNT</button>
         </form>

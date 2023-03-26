@@ -1,7 +1,10 @@
 body{
-    background-color: black;
+    /* background-color: black; */
+    background-image: url("https://static.zara.net/photos///contents/mkt/spots/ss23-north-woman-collection/subhome-xmedia-12-in//w/1920/IMAGE-landscape-fill-6269b9d8-965c-4461-af61-f33e934296a2-default_0.jpg?ts=1679585677356");
+    background-size: cover;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
 }
 
 #nav{
@@ -12,16 +15,19 @@ body{
     background-color: transparent;
 }
 
+
 #icon ion-icon{
     color: white;
     margin-top: 65px;
-    border: 1px solid rgb(82, 81, 81);
+    /* border: 1px solid rgb(82, 81, 81); */
     height: 30px;
     width: 30px;
+    cursor: pointer;
 }
 
 #logo img{
-    width: 40%;
+    width: 90%;
+    margin-top: -90px;
     margin-left: 10%;
     margin-bottom: 0px;
 }
@@ -62,4 +68,159 @@ body{
     position: relative;
     top: -1.5px;
     left: 14.5%;
+}
+
+
+#content{
+    display: none;
+    position: relative;
+    width: 30%;
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+    /* opacity: 1;
+    transition: opacity 1s ease-in; */
+}
+
+.cancel{
+    width: 7%;
+}
+.cancel ion-icon{
+    position: relative;
+    left: 28px;
+    top: 33px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.cat{
+    margin-left: 32px;
+    margin-top: 50px;
+}
+.cat a{
+    margin-right: 10px;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+}
+
+.categories ul{
+    list-style-type: none;
+    padding-left: 32px;
+    margin-top: 35px;
+}
+.categories li{
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.underline{
+    text-decoration: underline;
+    text-decoration-color: rgb(105, 105, 105);
+    text-decoration-thickness: 1.5px;
+}
+
+
+.womanCategories{
+    position: absolute;
+    /* display: none; */
+}
+.womanCategories .new span{
+    position: relative;
+    top: -2px;
+    font-size: 7px;
+    margin-top: -10px;
+}
+.womanCategories .special{
+    color: rgb(255, 0, 0);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.manCategories{
+    position: absolute;
+    display: none;
+}
+.manCategories .new span{
+    position: relative;
+    top: -2px;
+    font-size: 7px;
+    margin-top: -10px;
+}
+.manCategories .special{
+    color: rgb(255, 0, 0);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.kidsCategories{
+    position: absolute;
+    display: none;
+}
+.kidsCategories .new span{
+    position: relative;
+    top: -2px;
+    font-size: 7px;
+}
+.kidsCategories .new{
+    margin-bottom: 30px;
+}
+.kidsCategories li{
+    margin-bottom: 17px;
+}
+
+
+.beautyCategories{
+    position: absolute;
+    display: none;
+}
+.beautyCategories li{
+    margin-bottom: 30px;
+}
+
+
+/* details */
+
+.news p{
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    width: 20%;
+    margin: 0px;
+    font-size: larger;
+    text-align: center;
+    visibility: hidden;
+    transition: ease-out;
+    cursor: pointer;
+}
+
+.social{
+    position: absolute;
+    text-align: center;
+    width: 20%;
+    top: 35%;
+    font-size: medium;
+    left: 88.5%;
+    visibility: hidden;
+}
+.social ul{
+    position: absolute;
+    list-style: none;
+}
+.social li{
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: black;
+    text-align: right;
+}
+
+.location{
+    margin-left: 13.4%;
+    margin-top: 100px;
+    display: none;
+}
+.location p{
+    margin: 1px;
+    font-size: 15px;
 }

@@ -16,7 +16,6 @@ body{
 #icon ion-icon{
     color: white;
     margin-top: 65px;
-    border: 1px solid rgb(82, 81, 81);
     height: 30px;
     width: 30px;
 }
@@ -85,4 +84,66 @@ body{
     border: white 1px solid;
     color: white;
     cursor: pointer;
+}
+
+#main{
+    padding-left: 59px;
+    margin-left: 8%;
+}
+#main h3{
+    color: white;
+    font-size: 15px;
+}
+#main input,button{
+    display: block;
+    outline: none;
+    background-color: rgb(0, 0, 0);
+    border: none;
+    border-bottom: 1px solid white;
+}
+#main label{
+    color: #ffffff;
+    position: relative;
+    top: 25px;
+    display: none;
+}
+
+form>div{
+    margin-top: 40px;
+    height: 50px;
+}
+form>div>input{
+    height: 30px;
+    width: 30%;
+    color: white;
+    margin-right: 50px;
+}
+form>div>input::placeholder{
+    color: #ffffff;
+}
+form>div>input:focus::placeholder{
+    opacity: 0;
+}
+button{
+    margin-top: 40px;
+    height: 35px;
+    width: 30.5%;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+}
+form~a{
+    display: block;
+    margin-top: 30px;
+    color: white;
+}
+#receiveEmail,#privacy{
+    height: 10px;
+    margin-right: 0px;
+    width: 10px;
+}
+
+.pass{
+    display: flex;
 }
