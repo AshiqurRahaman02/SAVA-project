@@ -3,23 +3,66 @@ const {ProductModel} = require("../models/products.model")
 
 const productRouter = express.Router()
 
+
+//all products
 productRouter.get('/', async (req, res) => {
     const products = await ProductModel.find()
     res.status(200).send(products)
 })
 
-productRouter.get('/:id', async (req, res) => {
+//any perticuler product using id
+productRouter.get('/product/:id', async (req, res) => {
     const product = await ProductModel.findById(req.params.id)
     res.status(200).send(product)
 })
-productRouter.get('/?productGender', async (req, res) => {
+
+//gender products
+productRouter.get('/gender/:CAT', async (req, res) => {
     try {
-        const product = await ProductModel.find({productGender:req.query.productGender})
-        res.status(200).send(product)
+        const products = await ProductModel.find({productGender:req.params.CAT});
+        res.status(200).send(products);
     } catch (error) {
-        res.status(500).send({massage:error.message})
+        console.log("error");
+        res.status(500).send({ message: error.message });
     }
-})
+});
+
+
+productRouter.get('/category', async(req, res) => {
+    try {
+        const category = req.query.c
+        console.log(category)
+        const products = await ProductModel.find({productCategory:category});
+        res.status(200).send(products);
+    } catch (error) {
+        console.log("error");
+        res.status(500).send({ message: error.message });
+    }
+});
+
+productRouter.get('/name', async(req, res) => {
+    try {
+        const name = req.query.n
+        console.log(name)
+        const products = await ProductModel.find({productName:name});
+        res.status(200).send(products);
+    } catch (error) {
+        console.log("error");
+        res.status(500).send({ message: error.message });
+    }
+});
+
+productRouter.get('/color', async(req, res) => {
+    try {
+        const color = req.query.c
+        console.log(color)
+        const products = await ProductModel.find({productColor:color});
+        res.status(200).send(products);
+    } catch (error) {
+        console.log("error");
+        res.status(500).send({ message: error.message });
+    }
+});
 
 
 productRouter.post('/add', async (req, res) => {

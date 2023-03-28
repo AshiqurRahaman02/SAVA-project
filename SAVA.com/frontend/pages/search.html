@@ -22,7 +22,7 @@
             <hr>
         </div>
         <div class="login">
-            <a href="./login.html">LOG IN</a>
+            <a id="name">LOG IN</a>
             <a href="">HELP</a>
             <!-- <ion-icon name="cart-outline"></ion-icon> -->
             <span>0</span>
@@ -31,9 +31,12 @@
         </div>
     </nav>
     <header>
+        <ion-icon name="search-outline" id="searchIcon"></ion-icon>
+        <ion-icon name="close-outline" id="cancelIcon"></ion-icon>
         <input type="text" placeholder="SEARCH FOR AN ITEM, COLOUR, COLLECTION...
         " id="searchInput">
-        <div>
+        
+        <div id="hideDiv">
             <a id="woman" class="underline">WOMAN</a>
             <a id="man">MAN</a>
             <a id="kids">KIDS</a>
@@ -44,6 +47,9 @@
         <div>
             <!-- append everything here -->
         </div>
+    </div>
+    <div id="popup" class="popup">
+        
     </div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

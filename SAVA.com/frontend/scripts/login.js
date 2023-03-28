@@ -11,6 +11,8 @@ loginBtn.addEventListener('click', (e) => {
         password: password.value
     }
 
+    console.log(newUser)
+
     fetch("http://localhost:2528/users/login",{
         method: "POST",
         headers: {

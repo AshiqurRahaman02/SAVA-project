@@ -1,7 +1,9 @@
 let email = document.getElementById('email');
 let passwords = document.getElementById("password")
+let name = document.getElementById("name");
 let address = document.getElementById("address");
 let phoneNo = document.getElementById("phoneNo");
+let alternatePhone = document.getElementById("alternatePhone");
 let submitButton = document.getElementById("submit");
 
 submitButton.addEventListener("click", (e)=>{
@@ -10,8 +12,10 @@ submitButton.addEventListener("click", (e)=>{
     let newUser = {
         email: email.value,
         password: passwords.value,
+        name: name.value,
         address: address.value,
-        phoneNo: phoneNo.value
+        phoneNo: phoneNo.value,
+        alternatePhone:alternatePhone.value
     }
     fetch("http://localhost:2528/users/register",{
         method: "POST",

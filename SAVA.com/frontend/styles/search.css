@@ -6,10 +6,11 @@ body{
 
 #nav{
     position: fixed;
-    width: 95%;
+    width: 100%;
     display: flex;
-    margin: -30px 30px 0px 30px;
-    background-color: transparent;
+    margin: -30px 30px 0px 0px;
+    padding-left: 30px;
+    background-color: white;
 }
 
 
@@ -33,7 +34,7 @@ body{
 .search{
     visibility: hidden;
     margin-top: 65px;
-    margin-left: 30%;
+    margin-left: 38.5%;
 }
 .search hr{
     width: 150%;
@@ -45,7 +46,7 @@ body{
 }
 
 .login{
-    margin-left: 18%;
+    margin-left: 13%;
     margin-top: 55px;
 }
 .login a{
@@ -66,14 +67,31 @@ body{
     color: rgb(0, 0, 0);
     position: relative;
     top: -1.5px;
-    left: 14.5%;
+    left: 10.6%;
 }
 
 /* header part */
+#searchIcon{
+    position: absolute;
+    top: 220px;
+    right: 45px;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+}
+#cancelIcon{
+    position: absolute;
+    top: 220px;
+    right: 45px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: none;
+}
 #searchInput{
     margin-top: 220px;
     margin-left: 33px;
-    width: 93.5%;
+    width: 95.5%;
     height: 30px;
     border: 0px;
     border-bottom: 1px solid black;
@@ -82,6 +100,8 @@ body{
 #searchInput::placeholder{
     font-size: 12px;
 }
+
+
 #searchInput~div{
     margin-left: 33px;
     margin-top: 10px;
@@ -104,3 +124,147 @@ body{
     margin-left: 33px;
     margin-top: 50px;
 }
+#main>div{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 10px 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.card-img-top{
+    width: 100%;
+}
+.card-body{
+    display: flex;
+    height: 60px;
+}
+.card-title{
+    width: 80%;
+    margin-top: 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.card-color{
+    margin-top: 15px;
+}
+.card-color~div{
+    width: 25px;
+    background-color: white;
+}
+.cart{
+    margin-top: 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    width: 20px;
+}
+.fav{
+    margin-top: 5px;
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+.row{
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(0, 0, 0);
+}
+
+.popup{
+    position: absolute;
+    background-color: #fcfcfc;
+    height: 80vh;
+    width: 100%;
+    border-radius: 10px ;
+    text-align: center;
+    display: flex;
+ 
+    top: 0;
+    overflow-y: hidden;
+    left: 50%;
+    transform: translate(-50% , -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s , top 0.4s;
+ }
+ .openpopup{
+    visibility: visible;
+    top: 60%;
+    transform: translate(-50% , -50%) scale(1);
+ }
+
+ .popup>div{
+    width: 46.4%;
+    /* border: 1px solid red; */
+    padding-left: 20px;
+ }
+ .popup>div>img{
+    width: 54%;
+    margin: auto;
+    margin-top: 15px;
+    border: 1px solid rgb(214, 214, 214);
+ }
+ #cancel{
+    position: absolute;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgb(228, 228, 228);
+    cursor: pointer;
+ }
+
+
+ #name{
+    text-align: left;
+    margin-left: 50px;
+    /* border: 1px solid red; */
+ }
+ #ph4{
+    margin-left: 50px;
+    text-align: left;
+    /* border: 1px solid red; */
+ }
+ #description{
+    text-align: left;
+    margin-left: 50px;
+    /* border: 1px solid red; */
+    height: 100px;
+    width: 85%;
+ }
+ #genP{
+    text-align: left;
+    margin-left: 50px;
+    /* border: 1px solid red; */
+ }
+ #colP{
+    text-align: left;
+    margin-left: 50px;
+    /* border: 1px solid red; */
+ }
+ #catP{
+    text-align: left;
+    margin-left: 50px;
+    /* border: 1px solid red; */
+ }
+
+ #addToCart,#addToWishlist{
+    margin-top: 40px;
+    height: 40px;
+    width: 42.5%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border: 0px solid rgb(0, 0, 0);
+    background-color: black;
+    cursor: pointer;
+ }
+
+ #buyNow{
+    margin-top: 40px;
+    height: 40px;
+    width: 85%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border: 0px solid rgb(0, 0, 0);
+    background-color: black;
+    cursor: pointer;
+ }

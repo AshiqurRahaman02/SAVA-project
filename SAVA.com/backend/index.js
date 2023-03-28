@@ -10,6 +10,9 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
+app.get("/welcome",(req,res)=>{
+    res.send("Welcome to our API")
+})
 app.use("/users",userRouter)
 app.use("/products",productRouter)
 
