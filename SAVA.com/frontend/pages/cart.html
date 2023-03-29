@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search engine | SAVA India</title>
     <link  rel="icon" href="../images/favicon.png" type="image/x-icon" >
-    <link rel="stylesheet" href="../styles/search.css">
+    <link rel="stylesheet" href="../styles/cart.css">
 </head>
 <body>
     <nav id="nav">
@@ -18,32 +18,28 @@
             <img src="../images/Main_Logo2.png" alt="" onclick="window.location.href='./index.html'">
         </div>
         <div class="search">
-            <a href="">SEARCH</a>
+            <a href="./search.html">SEARCH</a>
             <hr>
         </div>
         <div class="login">
             <a id="name">LOG IN</a>
             <a href="">HELP</a>
             <!-- <ion-icon name="cart-outline"></ion-icon> -->
-            <span>0</span>
-            <ion-icon name="bag-outline" onclick="window.location.href='./cart.html'"></ion-icon>
+            <img src="../images/delivery.svg" alt=""  onclick="window.location.href='./order.html'">
             
         </div>
     </nav>
     <header>
-        <ion-icon name="search-outline" id="searchIcon"></ion-icon>
-        <ion-icon name="close-outline" id="cancelIcon"></ion-icon>
-        <input type="text" placeholder="SEARCH FOR AN ITEM, COLOUR, COLLECTION...
-        " id="searchInput">
-        
         <div id="hideDiv">
-            <a id="woman" class="underline">WOMAN</a>
-            <a id="man">MAN</a>
-            <a id="kids">KIDS</a>
+            <a id="cart" class="underline">CART</a>
+            <a id="wishlist">WISHLIST</a>
+        </div>
+        <div style="display: flex;justify-content: space-between;" id="notify">
+            <p id="notifyLine">Total <span id="totalItems">5</span> items present in your cart</p> <p id="notifyLine2">Total Amount <span id="totalPrice"></span></p>
         </div>
     </header>
     <div id="main">
-        <p>YOU MIGHT BE INTERESTED IN</p>
+        <!-- <p>YOU MIGHT BE INTERESTED IN</p> -->
         <div>
             <!-- append everything here -->
         </div>
@@ -58,4 +54,4 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
-<script src="../scripts/search.js"></script>
+<script src="../scripts/cart.js"></script>

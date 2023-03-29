@@ -29,7 +29,6 @@ userRouter.post("/login",async(req,res)=>{
     try {
         let user =await UserModel.findOne({email})
         bcrypt.compare(password,user.password,(err,result)=>{
-            console.log(err,result)
             if(result){
                 res.status(200).send({message:"Welcome Back to our website",token:jwt.sign({userId:user._id},"deathNote"),user})
             }

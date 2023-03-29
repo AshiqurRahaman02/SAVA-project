@@ -1,7 +1,6 @@
 let userInfo = JSON.parse(localStorage.getItem('userInfo'));
 // let userInfo = null
 if(userInfo){
-    console.log(userInfo);
 
     let name = userInfo.name.split(" ")[0];
     let div = document.getElementById("name")
@@ -10,6 +9,9 @@ if(userInfo){
     div.addEventListener("click" , (e)=>{
         window.location.href = "../pages/index.html"
     })
+
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    document.querySelector(".login>span").innerHTML = cartData.length
 }else{
     let div = document.getElementById("name")
 
@@ -31,7 +33,6 @@ function getProducts(catagory) {
     fetch(`http://localhost:2528/products/gender/${catagory}`)
     .then(response=>response.json())
     .then(data=>{
-        console.log(data)
         if(data.length){
             display(data)
         }else{
@@ -101,6 +102,7 @@ function display(allProducts ) {
     parent.innerHTML = html
 }
 
+
 const woman = document.getElementById("woman")
 const man = document.getElementById("man")
 const kids = document.getElementById("kids")
@@ -129,6 +131,7 @@ kids.addEventListener("click",(e) => {
     man.classList.remove("underline")
     woman.classList.remove("underline")
 })
+
 
 const searchIcon = document.querySelector("#searchIcon")
 const searchInput = document.querySelector("#searchInput")
@@ -300,4 +303,125 @@ const closePopup = (productCategory) => {
 
     parent.style.display = "block"
     window.location.reload()
+}
+
+
+function addToCart(id){
+    
+    fetch(`http://localhost:2528/products/product/${id}`)
+    .then(response=>response.json())
+    .then(data=>{
+            console.log(data)
+            addtoCartFunction(data)
+    })
+    .catch(err => {
+            console.log(err)
+    })
+
+}
+
+function addtoCartFunction(data){
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    if(!userInfo){
+        var typewriterText = "PLEASE LOGIN FIRST";
+    }else
+    if(isPresent(data)){
+        var typewriterText = "PRODUCT ALLREADY ADDED TO CART";
+        console.log(data)
+    }else{
+        var typewriterText = "PRODUCT ADDED TO CART";
+        data.quantity = 1
+        cartData.push(data)
+        localStorage.setItem("cart", JSON.stringify(cartData))
+
+        document.querySelector(".login>span").innerHTML = cartData.length
+    }
+
+    document.getElementById("alert").style.visibility="visible"
+    const typewriterDelay = 100;
+    const typewriterElement = document.getElementById("typewriter");
+    typewriterElement.innerHTML = ""
+    let i = 0;
+    typeWriter();
+    function typeWriter() {
+        if (i < typewriterText.length) {
+            typewriterElement.innerHTML += typewriterText.charAt(i);
+            i++;
+            setTimeout(typeWriter, typewriterDelay);
+        }
+    }
+
+    function isPresent(data){
+        for(let i = 0; i < cartData.length; i++){
+            if(data._id == cartData[i]._id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    setTimeout(function(){
+        document.getElementById("alert").style.visibility="hidden"
+    }, 3000)
+}
+
+
+function addToWishlist(id){
+    
+    fetch(`http://localhost:2528/products/product/${id}`)
+    .then(response=>response.json())
+    .then(data=>{
+            console.log(data)
+            addtoWishListFunction(data)
+    })
+    .catch(err => {
+            console.log(err)
+    })
+}
+
+function addtoWishListFunction(data){
+    let wishlistData = JSON.parse(localStorage.getItem("wishlist")) || [];
+    
+    if(!userInfo){
+        var typewriterText = "PLEASE LOGIN FIRST";
+        var time = 3000
+    }else
+    if(isPresent(data)){
+        var typewriterText = "PRODUCT ALLREADY ADDED TO WISHLIST";
+        var time = 4000
+        console.log(data)
+    }else{
+        var typewriterText = "PRODUCT ADDED TO WISHLIST";
+        var time = 3000
+        wishlistData.push(data)
+        localStorage.setItem("wishlist", JSON.stringify(wishlistData))
+    }
+
+    document.getElementById("alert").style.visibility="visible"
+    const typewriterDelay = 100;
+    const typewriterElement = document.getElementById("typewriter");
+    typewriterElement.innerHTML = ""
+    let i = 0;
+    typeWriter();
+    function typeWriter() {
+        if (i < typewriterText.length) {
+            typewriterElement.innerHTML += typewriterText.charAt(i);
+            i++;
+            setTimeout(typeWriter, typewriterDelay);
+        }
+    }
+
+    function isPresent(data){
+        for(let i = 0; i < wishlistData.length; i++){
+            if(data._id == wishlistData[i]._id){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    setTimeout(function(){
+        document.getElementById("alert").style.visibility="hidden"
+    }, time)
 }

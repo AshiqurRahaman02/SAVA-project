@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search engine | SAVA India</title>
     <link  rel="icon" href="../images/favicon.png" type="image/x-icon" >
-    <link rel="stylesheet" href="../styles/search.css">
+    <link rel="stylesheet" href="../styles/order.css">
 </head>
 <body>
     <nav id="nav">
@@ -18,7 +18,7 @@
             <img src="../images/Main_Logo2.png" alt="" onclick="window.location.href='./index.html'">
         </div>
         <div class="search">
-            <a href="">SEARCH</a>
+            <a href="./search.html">SEARCH</a>
             <hr>
         </div>
         <div class="login">
@@ -27,25 +27,31 @@
             <!-- <ion-icon name="cart-outline"></ion-icon> -->
             <span>0</span>
             <ion-icon name="bag-outline" onclick="window.location.href='./cart.html'"></ion-icon>
-            
         </div>
     </nav>
-    <header>
-        <ion-icon name="search-outline" id="searchIcon"></ion-icon>
-        <ion-icon name="close-outline" id="cancelIcon"></ion-icon>
-        <input type="text" placeholder="SEARCH FOR AN ITEM, COLOUR, COLLECTION...
-        " id="searchInput">
-        
-        <div id="hideDiv">
-            <a id="woman" class="underline">WOMAN</a>
-            <a id="man">MAN</a>
-            <a id="kids">KIDS</a>
-        </div>
-    </header>
-    <div id="main">
-        <p>YOU MIGHT BE INTERESTED IN</p>
-        <div>
-            <!-- append everything here -->
+    <div id="content">
+        <p></p>
+        <div id="main">
+            <!-- <p>YOU MIGHT BE INTERESTED IN</p> -->
+            <div id="left">
+                <!-- append everything here -->
+            </div>
+            <div id="right">
+                <div>
+                    <div id="totalProducts"><h2>TOTAL PRODUCTS </h2><h2></h2></div>
+                    <div id="totalPrice"><h2>TOTAL PRICE </h2><h2></h2></div>
+                    <div id="discount"><h2>TOTAL DISCOUNT </h2><h2></h2></div>
+                    <div id="deliveryCharges"><h3>DELIVERY CHARGES</h3><h3></h3></div>
+                    <hr>
+                    <div id="total"><h1>TOTAL</h1><h1></h1></div>
+                    <hr>
+                    <button id="order">ORDER NOW</button>
+                </div>
+                <div style="display: flex;" >
+                    <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/shield_b33c0c.svg" alt="" style="margin-right: 20px;">
+                    <h3>Safe and Secure Payments.Easy returns.100% Authentic products.</h3>
+                </div>
+            </div>
         </div>
     </div>
     <div id="popup" class="popup">
@@ -58,4 +64,4 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
-<script src="../scripts/search.js"></script>
+<script src="../scripts/order.js"></script>

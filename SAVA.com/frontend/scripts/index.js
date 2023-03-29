@@ -10,6 +10,9 @@ if(userInfo){
     div.addEventListener("click" , (e)=>{
         window.location.href = "../pages/index.html"
     })
+
+    let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+    document.querySelector(".login>span").innerHTML = cartData.length
 }else{
     let div = document.getElementById("name")
 
