@@ -139,7 +139,6 @@ function rightPartDisplay(price,length){
 
 function roundToThousands(num) {
     let mod = num.toString().length-2
-    console.log(mod)
     
     return num- Math.floor(num /10**mod)*(10**mod);
 }
@@ -148,9 +147,71 @@ let orderBtn = document.querySelector("#order");
 
 orderBtn.addEventListener("click", ()=>{
     let data = JSON.parse(localStorage.getItem("order")) || [];
-    data = []
-    // localStorage.setItem("order", JSON.stringify(data))
 
     orderBtn.innerHTML = "ORDER PLACED"
     // orderBtn.style.backgroundColor = "green"
+    displayOrder(data.length)
+
+    // data = []
+    // localStorage.setItem("order", JSON.stringify(data))
 })
+
+
+function displayOrder(total) {
+    parent.innerHTML =""
+    let today = new Date()
+
+    const options = { month: 'short', day: 'numeric', year: 'numeric' };
+
+    const orderDate = today.toLocaleString('en-US', options);
+
+    const tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+    const shipDate = tomorrow.toLocaleDateString('en-US', options);
+
+    const after5days = new Date(today.getTime() + (5 * 24 * 60 * 60 * 1000));
+    const deliveryDate = after5days.toLocaleDateString('en-US', options);
+
+    const space = "  "
+
+
+    parent.innerHTML = `
+        <div style="width: 700px;">
+            <h2>TOTAL ${total} ITEMS PLACED</h2>
+            <div style="display: flex;justify-content: space-between;">
+                <div>
+                    <p>ORDER CONFIRMED</p>
+                    <ion-icon name="ellipse-sharp"></ion-icon>
+                    <p>${orderDate}</p>
+                </div>
+                <div>
+                    <p>SHIP</p>
+                    <ion-icon name="ellipse-sharp"></ion-icon>
+                    <p>${shipDate}</p>
+                </div>
+                <div>
+                    <p>OUT FOR DELIVERY</p>
+                    <ion-icon name="ellipse-sharp"></ion-icon>
+                    <p></p>
+                </div>
+                <div>
+                    <p>DELIVERED</p>
+                    <ion-icon name="ellipse-sharp"></ion-icon>
+                    <p>EXPECTED BY ${deliveryDate}</p>
+                </div>
+            </div>
+            <hr id="hrLine">
+            <div id="delivery">
+                <div>
+                    <h4>DELIVERY ADDRESS</h4>
+                    <div><h4>${userInfo.address}</h4> <span>CHANGE ADDRESS</span></div>
+                    <div><h4>${userInfo.phoneNo}</h4> <span>CHANGE PHONE NO</span></div>
+                </div>
+                <div>
+                    <h4><img src="../images/delivery.svg" alt=""> <span>CHANGE DATE</span></h4>
+                    <h4><ion-icon name="close-outline"></ion-icon> <span>CANCEL DELIVERY</span></h4>
+                    <h4><ion-icon name="help-circle-outline"></ion-icon><span> HELP</span></h4>
+                </div>
+            </div>
+        </div>
+    `
+}

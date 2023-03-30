@@ -210,3 +210,48 @@ body{
     font-size: 15px;
     cursor: pointer;
 }
+#line{
+    font-size: 15px;
+}
+#hrLine{
+    width: 519px;
+    height: 3px;
+    border: 1px solid black;
+    margin-left: 3px;
+    margin-top: -65px;
+}
+#delivery{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+#delivery>div:nth-child(1)>div{
+    display: flex;
+    justify-content: space-between;
+}
+#delivery>div:nth-child(1) span{
+    position: relative;
+    top: 18px;
+    text-align: right;
+    margin-left: 20px;
+    border: .5px solid black;
+    padding: 3px;
+    height: 15px;
+    margin-top: 5px;
+    font-size: 12px;
+    cursor: pointer;
+}
+#delivery>div:nth-child(2) img{
+    margin-right: 13px;
+}
+#delivery>div:nth-child(2) ion-icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+#delivery>div:nth-child(2) span{
+    position: relative;
+    top:-8px;
+    padding: 3px;
+    cursor: pointer;
+}

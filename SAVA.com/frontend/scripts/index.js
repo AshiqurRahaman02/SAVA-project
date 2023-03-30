@@ -1,4 +1,4 @@
-let userInfo = JSON.parse(localStorage.getItem('userInfo'));
+let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
 // let userInfo = null
 if(userInfo){
     console.log(userInfo);
@@ -8,7 +8,7 @@ if(userInfo){
     div.innerHTML = name;
 
     div.addEventListener("click" , (e)=>{
-        window.location.href = "../pages/index.html"
+        window.location.href = "../pages/account.html"
     })
 
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
@@ -158,7 +158,7 @@ window.addEventListener("scroll", ()=>{
 
 
 //body background image
-const images = ['https://static.zara.net/photos///contents/mkt/spots/ss23-north-man-new/subhome-xmedia-12//w/1920/IMAGE-landscape-fill-9f775843-f9a3-4536-a319-c4a3cba8cd62-default_0.jpg?ts=1679501859704', 'https://static.zara.net/photos///contents/mkt/spots/ss23-north-kids-babygirl/subhome-xmedia-12//w/1920/IMAGE-landscape-default-fill-a0123bd2-79b5-4170-9aa9-afa215953182-default_0.jpg?ts=1679655646683', 'https://static.zara.net/photos///contents/mkt/spots/ss23-north-beauty-new/subhome-xmedia-10//w/1920/IMAGE-landscape-default-fill-064e8a8d-c422-412d-a6be-96fdd82d6554-default_0.jpg?ts=1678438239201', "https://static.zara.net/photos///contents/mkt/spots/ss23-north-woman-collection/subhome-xmedia-12-in//w/1920/IMAGE-landscape-fill-6269b9d8-965c-4461-af61-f33e934296a2-default_0.jpg?ts=1679585677356"]; 
+const images = ['https://static.zara.net/photos///contents/mkt/spots/ss23-north-man-new/subhome-xmedia-12//w/1920/IMAGE-landscape-fill-9f775843-f9a3-4536-a319-c4a3cba8cd62-default_0.jpg?ts=1679501859704', 'https://static.zara.net/photos///contents/mkt/spots/ss23-north-kids-babygirl/subhome-xmedia-12//w/1920/IMAGE-landscape-default-fill-a0123bd2-79b5-4170-9aa9-afa215953182-default_0.jpg?ts=1679655646683', 'https://static.zara.net/photos///contents/mkt/spots/ss23-north-beauty-new/subhome-xmedia-10//w/1920/IMAGE-landscape-default-fill-064e8a8d-c422-412d-a6be-96fdd82d6554-default_0.jpg?ts=1678438239201', "https://static.zara.net/photos///contents/mkt/spots/ss23-north-woman-collection/subhome-xmedia-12-in//w/1920/IMAGE-landscape-fill-6269b9d8-965c-4461-af61-f33e934296a2-default_0.jpg?ts=1679585677356","https://static.zara.net/photos///contents/mkt/spots/ss23-north-man-new/subhome-xmedia-13-2//w/1920/IMAGE-landscape-fill-a1d78788-2ba4-42eb-b976-f1d6df5c11f4-default_0.jpg?ts=1680104073040"]; 
 let index = 0;
 
 function changeBackground() {
