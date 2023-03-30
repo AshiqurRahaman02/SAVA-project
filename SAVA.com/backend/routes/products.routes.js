@@ -16,6 +16,18 @@ productRouter.get('/product/:id', async (req, res) => {
     res.status(200).send(product)
 })
 
+//pagination
+
+productRouter.get('/page/:page', async (req, res) => {
+    try {
+        const products = await ProductModel.find().skip((req.params.page - 1) * 16).limit(16)
+        res.status(200).send(products);
+    } catch (error) {
+        console.log("error");
+        res.status(500).send({ message: error.message });
+    }
+});
+
 //gender products
 productRouter.get('/gender/:CAT', async (req, res) => {
     try {

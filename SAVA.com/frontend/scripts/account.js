@@ -53,6 +53,13 @@ function displayAccount(){
     let phone = document.querySelector(".phone>h4")
     phone.innerHTML = userInfo.phoneNo
 
+    let alternate = document.querySelector(".alternate>h4")
+    let alternatePhoneNo =  userInfo.alternatePhoneNo 
+    if(alternatePhoneNo){
+        alternate.innerHTML = alternatePhoneNo
+        document.querySelector(".alternate>h5").innerHTML = "CHANGE"
+    }
+
     let address = document.querySelector(".address>div>h4")
     let add = (userInfo.address).replace(/,/g, ',<br>')
     address.innerHTML = `${add}`

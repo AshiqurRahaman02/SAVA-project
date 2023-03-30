@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page | SAVA India</title>
+    <link  rel="icon" href="../images/favicon.png" type="image/x-icon" >
+    <link rel="stylesheet" href="../styles/productpag.css">
+</head>
+<body>
+    <nav id="nav">
+        <div id="icon">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div id="logo">
+            <!-- <img src="../images/Logo.png" alt="" onclick="window.location.href='./index.html'"> -->
+            <img src="../images/Main_Logo2.png" alt="" onclick="window.location.href='./index.html'">
+        </div>
+        <div class="search">
+            <a href="./search.html">SEARCH</a>
+            <hr>
+        </div>
+        <div class="login">
+            <a id="name">LOG IN</a>
+            <a href="">HELP</a>
+            <!-- <ion-icon name="cart-outline"></ion-icon> -->
+            <span>0</span>
+            <ion-icon name="bag-outline" onclick="window.location.href='./cart.html'"></ion-icon>
+        </div>
+    </nav>
+    <div id="main">
+        <div id="left">
+            <div id="sortBy">
+                <select name="sort" id="sort">
+                    <option value="">TRANDING</option>
+                    <option value="asc">PRICE: LOW TO HIGH</option>
+                    <option value="desc">PRICE: HIGH TO LOW</option>
+                    <option value="review">AVG: CUSTOMER REVIEW</option>
+                </select>
+            </div>
+            <div id="byYear">
+                <p>FILTER BY YEAR</p>
+                <div id="2023"><input type="checkbox" name="2023" id="2023Checkbox" > 2023</div>
+                <div id="2022"><input type="checkbox" name="2022" id="2022Checkbox" > 2022</div>
+                <div id="2021"><input type="checkbox" name="2021" id="2021Checkbox" > 2021</div>
+            </div>
+            <div id="byGender">
+                <div id="woman"><input type="checkbox" name="WOMAN" id="womanCheckbox" > WOMAN</div>
+                <div id="man"><input type="checkbox" name="MAN" id="manCheckbox" > MAN</div>
+                <div id="kids"><input type="checkbox" name="KIDS" id="kidsCheckbox" > KIDS</div>
+            </div>
+            <div id="byCategory">
+                <p>POPULER CATEGORY</p>
+                <div id="besics"><input type="checkbox" name="BESICS" id="besicsCheckbox">BESICS</div>
+                <div id="shirts"><input type="checkbox" name="SHIRTS" id="shirtsCheckbox">SHIRTS</div>
+                <div id="jeans"><input type="checkbox" name="JEANS" id="jeansCheckbox">JEANS</div>
+                <div id="bags"><input type="checkbox" name="BAGS" id="bagsCheckbox">BAGS</div>
+                <div id="shoes"><input type="checkbox" name="SHOES" id="shoesCheckbox">SHOES</div>
+                <div id="perfume"><input type="checkbox" name="PERFUME" id="perfumeCheckbox">PERFUME</div>
+                <div id="accessories"><input type="checkbox" name="ACCESSORIES" id="accessoriesCheckbox">ACCESSORIES</div>
+            </div>
+            <div id="byColor">
+                <p>POPULER COLOR</p>
+                <div id="black"><input type="checkbox" name="BLACK" id="blackCheckbox">BLACK</div>
+                <div id="white"><input type="checkbox" name="WHITE" id="whiteCheckbox">WHITE</div>
+                <div id="pink"><input type="checkbox" name="PINK" id="pinkCheckbox">PINK</div>
+                <div id="red"><input type="checkbox" name="RED" id="redCheckbox">RED</div>
+                <div id="gold"><input type="checkbox" name="GOLD" id="goldCheckbox">GOLD</div>
+                <div id="unique"><input type="checkbox" name="UNIQUE" id="uniqueCheckbox">UNIQUE</div>
+            </div>
+        </div>
+        <div id="right">
+            <div id="parent">
+                <div id="load">
+                    <div class="loading"></div>
+                    <p>LOADING</p>
+                </div>
+            </div>
+            <div id="pagination">
+                <div>
+                    <button onclick="getAllProducts(1)">1</button>
+                    <button onclick="getAllProducts(2)">2</button>
+                    <button onclick="getAllProducts(3)">3</button>
+                    <button onclick="getAllProducts(4)">4</button>
+                    <button onclick="getAllProducts(5)">5</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        
+    </div>
+    <div id="alert">
+        <p id="typewriter"></p>
+    </div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
+<script src="../scripts/productpage.js"></script>
