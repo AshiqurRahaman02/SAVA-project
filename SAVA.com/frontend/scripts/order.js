@@ -7,7 +7,7 @@ if(userInfo){
     div.innerHTML = name;
 
     div.addEventListener("click" , (e)=>{
-        window.location.href = "../pages/index.html"
+        window.location.href = "../pages/account.html"
     })
 
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
@@ -25,8 +25,9 @@ window.addEventListener("load", ()=>{
     getCartProduct();
 })
 
+
+let data = JSON.parse(localStorage.getItem("order")) || [];
 function getCartProduct(){
-    let data = JSON.parse(localStorage.getItem("order")) || [];
     
     if(data.length){
         display(data)
@@ -146,14 +147,23 @@ function roundToThousands(num) {
 let orderBtn = document.querySelector("#order");
 
 orderBtn.addEventListener("click", ()=>{
-    let data = JSON.parse(localStorage.getItem("order")) || [];
+    let allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
 
     orderBtn.innerHTML = "ORDER PLACED"
-    // orderBtn.style.backgroundColor = "green"
     displayOrder(data.length)
 
-    // data = []
-    // localStorage.setItem("order", JSON.stringify(data))
+    for(let i=0; i<data.length; i++){
+        
+        let today = new Date()
+        const options = { month: 'short', day: 'numeric', year: 'numeric' };
+        const orderDate = today.toLocaleString('en-US', options);
+
+        data[i].orderDate = orderDate
+        allOrders.push(data[i])
+    }
+    
+    localStorage.setItem("allOrders", JSON.stringify(allOrders))
+    window.localStorage.removeItem("order")
 })
 
 

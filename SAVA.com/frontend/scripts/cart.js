@@ -132,7 +132,7 @@ function displayWishlist(data){
                 </div>
                 <div id="div2">
                 <span id="addToCart" onclick="addToCart('${product._id}')">ADD TO CART</span>
-                 <span id="buy" onclick="buyProduct('${product}')">BUY NOW</span><span id="delete" onclick="deleteProduct('${product._id}')">REMOVE</span> 
+                 <span id="buy" onclick="buyProduct('${product._id}')">BUY NOW</span><span id="delete" onclick="deleteProduct('${product._id}')">REMOVE</span> 
                 </div>
             </div>
         </div>
@@ -288,7 +288,7 @@ function displayProduct(product,quantity) {
         </div>
         <div>
             <h3 id="name">${product.productName}</h3>
-            <h4 id="ph4">PRICE <span id="price"></span></h4>
+            <h4 id="ph4">PRICE <span id="price">${product.productPrice}</span></h4>
             <p id="description">${product.productDescription}</p>
             <p id="genP">FOR <span id="gender">${product.productGender}</span></p>
             <p id="colP">COLOR <span id="color">${product.productColor}</span></p>

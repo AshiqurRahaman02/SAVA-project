@@ -1,6 +1,5 @@
 let userInfo = JSON.parse(localStorage.getItem('userInfo')) || null ;
 if(userInfo.name){
-    console.log(userInfo);
 
     let name = userInfo.name.split(" ")[0];
     let div = document.getElementById("name")
@@ -25,7 +24,8 @@ let name = document.querySelector(".account>h5")
 name.innerHTML = userInfo.name
 
 let allOrders = document.querySelector("#left>div:nth-child(3)>h4")
-allOrders.innerHTML = 2
+let allorders = JSON.parse(localStorage.getItem("allOrders")) || [];
+allOrders.innerHTML = allorders.length
 
 let cart = document.querySelector("#left>div:nth-child(4)>h4")
 var cartData = JSON.parse(localStorage.getItem("cart")) || [];
@@ -94,5 +94,58 @@ document.getElementById("logout").addEventListener("click",()=>{
 
     window.localStorage.removeItem("userInfo")
 
-    window.location.href = "./login.html"
+    window.location.href = "./login.html" 
+})
+
+document.querySelector("#left>div:nth-child(3)").addEventListener("click",()=>{
+    displayAllOrders(allorders)
+})
+
+function displayAllOrders(allorders){
+    let parent=document.querySelector("#right")
+
+    let html =""
+    allorders.forEach((order)=>{
+        let price = order.productPrice*order.quantity
+
+        let productName = order.productName;
+        let maxLength = 30;
+        if (productName.length > maxLength) {
+            productName = productName.substring(0, maxLength) + "...";
+        }
+
+        let today = new Date(order.orderDate);
+        let after5days = new Date(today.getTime());
+        after5days.setDate(today.getDate() + 5);
+
+        const options = { month: 'short', day: 'numeric', year: 'numeric' };
+        let deliveryDate = after5days.toLocaleString('en-US', options);
+        
+        html+=`
+            <div id="orderDiv" style="width: 70%;">
+                <div>
+                    <img src="${order.productImage}">
+                </div>
+                <div>
+                    <h3>${productName}</h3>
+                    <p>₹${price}</p>
+                    <p>${order.quantity}</p>
+                    <a> ORDER DATE ${order.orderDate}</a>
+                </div>
+                <div>
+                    <h4><ion-icon name="ellipse"></ion-icon>ON THE WAY</h4>
+                    <p>EXPECTED BY <br> ${deliveryDate}</p>
+                    <p>CANCEL DELIVERY</p>
+                    <p>NEED HELP ?</p>
+                </div>
+            </div>
+        `
+    })
+
+    parent.innerHTML = ""
+    parent.innerHTML = html
+}
+
+document.querySelector("#left>div:nth-child(2)").addEventListener("click",()=>{
+    window.location.reload()
 })
