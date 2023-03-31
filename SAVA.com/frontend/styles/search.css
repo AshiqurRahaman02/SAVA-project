@@ -283,3 +283,35 @@ body{
     color: rgb(0, 0, 0);
     font-size: larger;
  }
+
+ .loading {
+    position: relative;
+    top: 42%;
+    left: 260%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #e2e2e2;
+    border-top-color: #333;
+    border-bottom-color: #333;
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  #load>p{
+    position: relative;
+    top: 35%;
+    left: 260%;
+    font-size: 50px;
+  }
+
+   /* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+    }
+}

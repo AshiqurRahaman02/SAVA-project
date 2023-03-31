@@ -1,6 +1,5 @@
-let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
-// let userInfo = null
-if(userInfo){
+let userInfo = JSON.parse(localStorage.getItem('userInfo')) || null ;
+if(userInfo.name){
     console.log(userInfo);
 
     let name = userInfo.name.split(" ")[0];
@@ -89,4 +88,11 @@ document.getElementById("close").addEventListener("click",()=>{
 
     document.getElementById("close").style.display = "none"
     document.getElementById("open").style.display = ""
+})
+
+document.getElementById("logout").addEventListener("click",()=>{
+
+    window.localStorage.removeItem("userInfo")
+
+    window.location.href = "./login.html"
 })

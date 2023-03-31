@@ -7,7 +7,7 @@ if(userInfo){
     div.innerHTML = name;
 
     div.addEventListener("click" , (e)=>{
-        window.location.href = "../pages/index.html"
+        window.location.href = "../pages/account.html"
     })
 
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
