@@ -24,6 +24,12 @@ body{
     cursor: pointer;
 }
 
+#close{
+    position: absolute;
+    left: 5%;
+    display: none;
+}
+
 #logo img{
     width: 90%;
     margin-top: 40px;
@@ -31,7 +37,14 @@ body{
     margin-bottom: 0px;
     /* background-color: black; */
 }
-
+#logoH1 a{
+    font-size: 100px;
+    color: #000000;
+    display: block;
+    margin-top:30px;
+    margin-left: 20px;
+    display: none;
+}
 .search{
     /* visibility: hidden; */
     margin-top: 65px;
@@ -332,3 +345,65 @@ body{
     left: 153%;
     font-size: 50px;
   }
+
+
+  /* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+        margin-top: 220px;
+    }
+}
+
+
+/* for small screen */
+@media (max-width:500px) {
+    #logo img{
+        visibility: hidden;
+    }
+    #logoH1 a{
+        display: block;
+    }
+    .login a{
+        visibility: hidden;
+    }
+    .login ion-icon{
+        top: -15%;
+        left: -25%;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+    .login span{
+        top: -25%;
+        left: -8%;    
+    }
+
+    #left{
+        display: none;
+        width: 94%;
+    }
+    #left>div>select{
+        width: 70%;
+    }
+    #right{
+        width: 94%;
+        padding-left: 5px;
+    }
+    #right>div{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #parent{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+    .loading{
+        left: 50%;
+    }
+    #load>p{
+        left: 53%;
+    }
+}

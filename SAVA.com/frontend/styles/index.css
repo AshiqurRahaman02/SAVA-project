@@ -1,6 +1,6 @@
 body{
     /* background-color: black; */
-    background-image: url("https://static.zara.net/photos///contents/mkt/spots/ss23-north-woman-collection/subhome-xmedia-12-in//w/1920/IMAGE-landscape-fill-6269b9d8-965c-4461-af61-f33e934296a2-default_0.jpg?ts=1679585677356");
+    background-image: url("https://static.zara.net/photos///contents/mkt/spots/ss23-north-woman-dresses/subhome-xmedia-12//w/1920/IMAGE-landscape-fill-98d3f952-ac71-4167-84cb-9c8f473aea8c-default_0.jpg?ts=1679497898062");
     background-size: cover;
     margin: 0px;
     padding: 0px;
@@ -17,7 +17,7 @@ body{
 
 
 #icon ion-icon{
-    color: white;
+    color: rgb(0, 0, 0);
     margin-top: 65px;
     /* border: 1px solid rgb(82, 81, 81); */
     height: 30px;
@@ -42,7 +42,7 @@ body{
 }
 .search a{
     font-size: 15px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .login{
@@ -51,7 +51,7 @@ body{
 }
 .login a{
     font-size: 15px;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-right: 10px;
     margin-top: -20px;
 }
@@ -91,6 +91,9 @@ body{
     height: 30px;
     width: 30px;
     cursor: pointer;
+}
+.cancel>.login{
+    display: none;
 }
 
 .cat{
@@ -185,8 +188,7 @@ body{
 .news p{
     position: absolute;
     top: 30%;
-    left: 80%;
-    width: 20%;
+    right: 4%;
     margin: 0px;
     font-size: larger;
     text-align: center;
@@ -197,11 +199,11 @@ body{
 
 .social{
     position: absolute;
-    text-align: center;
+    text-align: right;
     width: 20%;
     top: 35%;
     font-size: medium;
-    left: 88.5%;
+    right: -4%;
     visibility: hidden;
 }
 .social ul{
@@ -223,4 +225,419 @@ body{
 .location p{
     margin: 1px;
     font-size: 15px;
+}
+
+
+
+
+/* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+    }
+}
+
+@media (max-width:1400px) {
+    #logo img{
+        width: 80%;
+        margin-left: 0%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: 25%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 11%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+}
+
+@media (max-width:1300px) {
+    #logo img{
+        margin-top: -80px;
+        width: 80%;
+        margin-left: 0%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: 23%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 9%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+}
+
+@media (max-width:1200px) {
+    #logo img{
+        margin-top: -80px;
+        width: 80%;
+        margin-left: 0%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: 21%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 7%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+}
+
+@media (max-width:1100px) {
+    #logo img{
+        margin-top: -75px;
+        width: 80%;
+        margin-left: 0%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: 15%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 7%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+
+    #content{
+        width: 40%;
+    }
+}
+
+@media (max-width:1000px) {
+    #logo img{
+        margin-top: -75px;
+        width: 80%;
+        margin-left: 0%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: 7%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 5%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+}
+
+@media (max-width:900px) {
+    #logo img{
+        margin-top: -75px;
+        width: 80%;
+        margin-left: 0%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: 2%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 5%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+}
+
+/* for middium screen */
+@media (max-width:850px) {
+    body{
+        background-image: url("../images/middium\ background.png");
+        background-repeat: no-repeat;
+        overflow: none;
+        height: 100vh;
+    }
+    #icon ion-icon{
+        color: white;
+        margin-top: 65px;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+    
+    #logo img{
+        width: 80%;
+        /* margin-top: -30px; */
+        margin-left: -5%;
+        margin-bottom: 0px;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: -17%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 1%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+        
+    #content{
+        display: none;
+        position: relative;
+        width: 50%;
+        height: 100vh;
+        background-color: rgb(240, 240, 240);
+        /* opacity: 1;
+        transition: opacity 1s ease-in; */
+        overflow: auto;
+        overflow-y: scroll;
+    }
+
+    .news p{
+        top: 30%;
+        right: 5%;
+        width: 100%;
+        text-align: right;
+    }
+    
+    .social{
+        width: 20%;
+        top: 35%;
+        font-size: medium;
+        right: 1%;
+    }
+}
+
+@media (max-width:700px) {
+    #logo img{
+        margin-top: -75px;
+        width: 80%;
+        margin-left: -10%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: -25%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 5%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: 15px;
+    }
+
+    #content{
+        width: 70%;
+    }
+}
+
+@media (max-width:600px) {
+    #logo img{
+        margin-top: -75px;
+        width: 80%;
+        margin-left: -10%;
+    }
+    
+    .search{
+        margin-top: 65px;
+        margin-left: -35%;
+    }
+    .search hr{
+        width: 150%;
+        margin: 0px;
+    }
+    .search a{
+        font-size: 15px;
+    }
+    
+    .login{
+        margin-left: 5%;
+        margin-top: 50px;
+    }
+    .login a{
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: 15px;
+    }
+    #hide{
+        display: none;
+    }
+
+    #content{
+        width: 80%;
+    }
+}
+
+/* for small screen */
+@media (max-width:500px) {
+    body{
+        background-image: url("../images/middium\ background.png");
+        background-repeat: no-repeat;
+        overflow: none;
+        width: 100%;
+    }
+    #logo img{
+        width: 80%;
+        margin-top: -25px;
+        margin-left: -10%;
+        margin-bottom: 0px;
+    }
+    .search{
+        margin-top: 65px;
+        margin-left: -10%;
+    }
+    .login{
+        visibility: hidden;
+        margin-left: 3%;
+        margin-top: 50px;
+    }
+        
+    #content{
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(240, 240, 240);
+        overflow: auto;
+        overflow-y: scroll;
+    }
+    
+    .cancel>.login{
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: -3%;
+        right: 10%;
+    }
+    .cancel>.login a{
+        font-size: 15px;
+        color: rgb(0, 0, 0);
+        margin-right: 10px;
+        margin-top: -20px;
+    }
+    .cancel>.login ion-icon{
+        position: relative;
+        top: 5px;
+        left: -2%;
+        color: rgb(0, 0, 0);
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+    .cancel>.login span{
+        color: rgb(0, 0, 0);
+        position: relative;
+        top: -1.5px;
+        left: 13.5%;
+    }
+
+    .news p{
+        top: 30%;
+        right: 10%;
+        width: 100%;
+        text-align: right;
+    }
+    
+    .social{
+        width: 20%;
+        top: 35%;
+        font-size: medium;
+        right: 22%;
+    }
 }

@@ -64,3 +64,29 @@ function displayAccount(){
     let add = (userInfo.address).replace(/,/g, ',<br>')
     address.innerHTML = `${add}`
 }
+
+let icon = document.querySelector("#open")
+
+icon.addEventListener("click", (e)=>{
+    //550
+    console.log(window.innerWidth)
+    if(window.innerWidth<500){
+        iconFunction()
+    }
+})
+
+function iconFunction(){
+    document.getElementById("left").style.display = "block"
+    document.getElementById("right").style.display = "none"
+
+    document.getElementById("close").style.display = "block"
+    document.getElementById("open").style.display = "none"
+}
+
+document.getElementById("close").addEventListener("click",()=>{
+    document.getElementById("left").style.display = "none"
+    document.getElementById("right").style.display = "block"
+
+    document.getElementById("close").style.display = "none"
+    document.getElementById("open").style.display = ""
+})

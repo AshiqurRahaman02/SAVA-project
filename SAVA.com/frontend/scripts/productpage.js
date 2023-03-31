@@ -92,7 +92,7 @@ function display(allProducts ) {
 
     parent.innerHTML = ""
     parent.innerHTML = html
-    document.querySelector("#pagination>div+").style.display="block"
+    document.querySelector("#pagination>div").style.display="block"
 }
 
 
@@ -355,3 +355,28 @@ async function applyFilters() {
         getAllProducts(1)
     }
 }
+
+let icon = document.querySelector("#open")
+
+icon.addEventListener("click", (e)=>{
+    //550
+    if(window.innerWidth<500){
+        iconFunction()
+    }
+})
+
+function iconFunction(){
+    document.getElementById("left").style.display = "block"
+    document.getElementById("right").style.display = "none"
+
+    document.getElementById("close").style.display = "block"
+    document.getElementById("open").style.display = "none"
+}
+
+document.getElementById("close").addEventListener("click",()=>{
+    document.getElementById("left").style.display = "none"
+    document.getElementById("right").style.display = "block"
+
+    document.getElementById("close").style.display = "none"
+    document.getElementById("open").style.display = ""
+})

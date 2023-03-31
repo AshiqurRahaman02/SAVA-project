@@ -134,8 +134,12 @@ body{
     overflow-y: scroll;
 }
 #right::-webkit-scrollbar{
+    visibility: hidden;
     width: 1px;
     background-color: #ffffff;
+}
+#right:hover:-webkit-scrollbar{
+    visibility: visible;
 }
 #right::-webkit-scrollbar-thumb{
     background-color: #000000;
@@ -177,4 +181,45 @@ p{
     font-size: 12px;
     cursor: pointer;
     height: 14px;
+}
+
+#close{
+    position: absolute;
+    left: 5%;
+    display: none;
+}
+
+
+/* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+        margin-top: 220px;
+    }
+}
+
+
+/* for small screen */
+@media (max-width:500px) {
+    #logo img{
+        width: 220%;
+        margin-top: 50px;
+        margin-left: 10%;
+    }
+    .login a{
+        visibility: hidden;
+    }
+    #left{
+        display: none;
+        width: 94%;
+    }
+    #right{
+        width: 94%;
+        padding-left: 5px;
+    }
+    #right>div{
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
