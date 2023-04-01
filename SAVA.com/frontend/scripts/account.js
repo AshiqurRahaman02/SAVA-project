@@ -149,3 +149,8 @@ function displayAllOrders(allorders){
 document.querySelector("#left>div:nth-child(2)").addEventListener("click",()=>{
     window.location.reload()
 })
+
+document.getElementById("delete").addEventListener("click",()=>{
+    window.localStorage.removeItem("userInfo")
+    window.location.href = "../pages/register.html"
+})

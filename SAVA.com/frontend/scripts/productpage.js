@@ -299,6 +299,12 @@ let filters = {}
 document.querySelectorAll("input[type=checkbox]").forEach((checkbox)=>{
     checkbox.addEventListener("change", (e)=>{
         filters[checkbox.name] = checkbox.checked
+        parent.innerHTML =`
+            <div id="load">
+                <div class="loading"></div>
+                <p>LOADING</p>
+            </div>
+        `
         applyFilters()
     })
 })
@@ -319,7 +325,7 @@ async function applyFilters() {
     console.log(filters)
     const filteredProducts = products.filter(product => {
         for(let key in filters) {
-            if(filters[key]&&(product.productCategory==key || product.productColor==key || product.productGender==key)){
+            if(filters[key]&&(product.productCategory==key || product.productColor==key || product.productGender==key || product.productYear==key )){
                 return product
             }
         }
@@ -327,9 +333,9 @@ async function applyFilters() {
 
     let randomProducts = [];
 
-    if(filteredProducts.length>20){
+    if(filteredProducts.length>32){
         // loop to randomly select 24 products
-        while (randomProducts.length < 20) {
+        while (randomProducts.length < 32) {
             const randomIndex = Math.floor(Math.random() * filteredProducts.length); 
             const randomProduct = filteredProducts[randomIndex]; 
             if (!randomProducts.includes(randomProduct)) { 
@@ -380,3 +386,86 @@ document.getElementById("close").addEventListener("click",()=>{
     document.getElementById("close").style.display = "none"
     document.getElementById("open").style.display = ""
 })
+
+
+var rangeOne = document.querySelector('input[name="rangeOne"]'),
+rangeTwo = document.querySelector('input[name="rangeTwo"]'),
+outputOne = document.querySelector('.outputOne'),
+outputTwo = document.querySelector('.outputTwo'),
+inclRange = document.querySelector('.incl-range'),
+updateView = function () {
+    if (this.getAttribute('name') === 'rangeOne') {
+        outputOne.innerHTML = this.value;
+        outputOne.style.left = this.value / this.getAttribute('max') * 100 + '%';
+    } else {
+        outputTwo.style.left = this.value / this.getAttribute('max') * 100 + '%';
+        outputTwo.innerHTML = this.value
+    }
+    if (parseInt(rangeOne.value) > parseInt(rangeTwo.value)) {
+        inclRange.style.width = (rangeOne.value - rangeTwo.value) / this.getAttribute('max') * 100 + '%';
+        inclRange.style.left = rangeTwo.value / this.getAttribute('max') * 100 + '%';
+    } else {
+        inclRange.style.width = (rangeTwo.value - rangeOne.value) / this.getAttribute('max') * 100 + '%';
+        inclRange.style.left = rangeOne.value / this.getAttribute('max') * 100 + '%';
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    updateView.call(rangeOne);
+    updateView.call(rangeTwo);
+    $('input[type="range"]').on('mouseup', function() {
+        this.blur();
+    }).on('mousedown input', function () {
+        updateView.call(this);
+    });
+});
+
+
+rangeOne.addEventListener("change",()=>{
+    parent.innerHTML =`
+    <div id="load">
+    <div class="loading"></div>
+    <p>LOADING</p>
+</div>
+    `
+    getProductsByPrice(rangeOne.value, rangeTwo.value)
+    
+})
+
+rangeTwo.addEventListener("change",()=>{
+    console.log(rangeOne.value, rangeTwo.value)
+    parent.innerHTML =`
+    <div id="load">
+        <div class="loading"></div>
+        <p>LOADING</p>
+    </div>
+    `
+    getProductsByPrice(rangeOne.value, rangeTwo.value)
+    
+})
+
+async function getProductsByPrice(min,max) {
+
+    try {
+        const response = await fetch(`http://localhost:2528/products/price?min=${min}&max=${max}`)
+        const data = await response.json()
+        if (data.length) {
+            allProductsData = data
+            display(data)
+        } else {
+            parent.innerHTML = `
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-danger" role="alert">
+                                <strong>No products found!</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        }
+    } catch (error) {
+        console.log(error)
+    }
+}

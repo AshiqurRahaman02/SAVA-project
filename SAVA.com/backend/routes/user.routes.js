@@ -40,7 +40,7 @@ userRouter.post("/login",async(req,res)=>{
 })
 
 //delete route
-userRouter.delete("delete/:id",async(req,res)=>{
+userRouter.delete("/delete/:id",async(req,res)=>{
     try {
         const user = await UserModel.findByIdAndDelete(req.params.id)
         res.status(200).send({message:"User deleted successfully"})

@@ -42,6 +42,18 @@
                     <option value="review">AVG: CUSTOMER REVIEW</option>
                 </select>
             </div>
+            <div id="forRange">
+                <p>PRICE</p>
+                <section class="range-slider container">
+                    <span class="output outputOne"></span>
+                    <span class="output outputTwo"></span>
+                    <span class="full-range"></span>
+                    <span class="incl-range"></span>
+                    <input name="rangeOne" value="300" min="300" max="11000" step="1" type="range" id="range">
+                    <input name="rangeTwo" value="11000" min="300" max="11000" step="1" type="range" id="range">
+                </section>
+                <div id="minMax"><a href="">MIN</a><a href="">MAX</a></div>
+            </div>
             <div id="byYear">
                 <p>FILTER BY YEAR</p>
                 <div id="2023"><input type="checkbox" name="2023" id="2023Checkbox" > 2023</div>
@@ -100,5 +112,6 @@
 </body>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </html>
 <script src="../scripts/productpage.js"></script>

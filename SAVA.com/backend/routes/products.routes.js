@@ -31,7 +31,7 @@ productRouter.get('/page/:page', async (req, res) => {
 //gender products
 productRouter.get('/gender/:CAT', async (req, res) => {
     try {
-        const products = await ProductModel.find({productGender:req.params.CAT});
+        const products = await ProductModel.find({productGender:req.params.CAT}).limit(32)
         res.status(200).send(products);
     } catch (error) {
         console.log("error");
@@ -43,7 +43,7 @@ productRouter.get('/gender/:CAT', async (req, res) => {
 productRouter.get('/category', async(req, res) => {
     try {
         const category = req.query.c
-        const products = await ProductModel.find({productCategory:category});
+        const products = await ProductModel.find({productCategory:category}).limit(32)
         res.status(200).send(products);
         console.log(products.length)
     } catch (error) {
@@ -68,7 +68,21 @@ productRouter.get('/color', async(req, res) => {
     try {
         const color = req.query.c
         console.log(color)
-        const products = await ProductModel.find({productColor:color});
+        const products = await ProductModel.find({productColor:color}).limit(32)
+        res.status(200).send(products);
+    } catch (error) {
+        console.log("error");
+        res.status(500).send({ message: error.message });
+    }
+});
+
+
+productRouter.get('/price', async(req, res) => {
+    try {
+        const min = req.query.min
+        const max = req.query.max
+        
+        const products = await ProductModel.find({productPrice: {$gte:min, $lte:max}}).limit(32)
         res.status(200).send(products);
     } catch (error) {
         console.log("error");
