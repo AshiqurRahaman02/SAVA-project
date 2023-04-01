@@ -43,9 +43,9 @@ productRouter.get('/gender/:CAT', async (req, res) => {
 productRouter.get('/category', async(req, res) => {
     try {
         const category = req.query.c
-        console.log(category)
         const products = await ProductModel.find({productCategory:category});
         res.status(200).send(products);
+        console.log(products.length)
     } catch (error) {
         console.log("error");
         res.status(500).send({ message: error.message });
@@ -80,6 +80,7 @@ productRouter.get('/color', async(req, res) => {
 productRouter.post('/add', async (req, res) => {
     try {
         const product = await ProductModel.create(req.body)
+        console.log(product)
         res.status(201).send({massage:"Product added successfully",p:product.productName})
     } catch (error) {
         res.status(500).send({massage:error.message})
