@@ -291,7 +291,7 @@ function displayProduct(product) {
                 <button id="addToCart" onclick="addToCart('${product._id}')">ADD TO CART</button>
                 <button id="addToWishlist" onclick="addToWishlist('${product._id}')">ADD TO WISHLIST</button>
             </div>
-            <button id="buyNow">BUY NOW</button>
+            <button id="buyNow" onclick="buyProduct('${product._id}')">BUY NOW</button>
             <div>
                 <p id="check">CHECK IN-STORE AVAILABILITY</p>
                 <p id="check">DELIVERY, EXCHANGES AND RETURNS</p>
@@ -428,4 +428,38 @@ function addtoWishListFunction(data){
     setTimeout(function(){
         document.getElementById("alert").style.visibility="hidden"
     }, time)
+}
+
+function buyProduct(id){
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
+    .then(response=>response.json())
+    .then(data=>{
+        buyProductFunction(data)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
+function buyProductFunction(data){
+    let orderData = JSON.parse(localStorage.getItem("order")) || [];
+    
+    if(isPresent(data)){
+        let index=isPresent(data)-1
+        orderData[index].quantity++;
+    }else{
+        data.quantity = 1
+        orderData.push(data)
+    }
+    localStorage.setItem("order", JSON.stringify(orderData))
+    window.location.href = '../pages/order.html'
+
+    function isPresent(data){
+        for(let i = 0; i < orderData.length; i++){
+            if(data._id == orderData[i]._id){
+                return i+1;
+            }
+        }
+        return false;
+    }
 }

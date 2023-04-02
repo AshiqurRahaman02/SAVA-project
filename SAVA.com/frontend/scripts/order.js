@@ -26,9 +26,9 @@ window.addEventListener("load", ()=>{
 })
 
 
-let data = JSON.parse(localStorage.getItem("order")) || [];
+
 function getCartProduct(){
-    
+    var data = JSON.parse(localStorage.getItem("order")) || [];
     if(data.length){
         display(data)
     }else{

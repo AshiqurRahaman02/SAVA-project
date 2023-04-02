@@ -297,7 +297,7 @@ function displayProduct(product,quantity) {
             <div>
                 <button id="addToWishlist" onclick="addToWishlist('${product._id}')">ADD TO WISHLIST</button>
             </div>
-            <button id="buyNow" onclick="buyProduct('${product}')">BUY NOW</button>
+            <button id="buyNow" onclick="buyProduct('${product._id}')">BUY NOW</button>
             <div>
                 <p id="check">CHECK IN-STORE AVAILABILITY</p>
                 <p id="check">DELIVERY, EXCHANGES AND RETURNS</p>
