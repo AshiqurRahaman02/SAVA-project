@@ -28,13 +28,11 @@ window.addEventListener("load", (e)=>{
     getAllProducts(1)
 })
 
-
+var currentPage = 1
 async function getAllProducts(page) {
-
     
-
     try {
-        const response = await fetch(`http://localhost:2528/products/page/${page}`)
+        const response = await fetch(`https://ill-trousers-crab.cyclic.app/products/page/${page}`)
         const data = await response.json()
         if (data.length) {
             allProductsData = data
@@ -97,10 +95,9 @@ function display(allProducts ) {
 
 
 function viewProduct(id){
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
    .then(response=>response.json())
    .then(data=>{
-    console.log(data)
     displayProduct(data)
    })
    .catch(err => {
@@ -112,7 +109,6 @@ function displayProduct(product) {
     let popup = document.getElementById("popup")
     popup.classList.add("openpopup")
 
-    parent.style.display="none"
 
     popup.innerHTML=`
         <div>
@@ -143,14 +139,11 @@ function displayProduct(product) {
 const closePopup = (productCategory) => {
 
     document.getElementById("popup").classList.remove("openpopup")
-
-    parent.style.display = "block"
-    window.location.reload()
 }
 
 function addToCart(id){
     
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
     .then(response=>response.json())
     .then(data=>{
             console.log(data)
@@ -211,7 +204,7 @@ function addtoCartFunction(data){
 
 function addToWishlist(id){
     
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
     .then(response=>response.json())
     .then(data=>{
             console.log(data)
@@ -316,13 +309,13 @@ document.querySelectorAll("input[type=checkbox]").forEach((checkbox)=>{
 
 
 async function getProducts() {
-try {
-    const response = await fetch('http://localhost:2528/products');
-    const data = await response.json();
-    return data;
-} catch (err) {
-    console.log(err);
-}
+    try {
+        const response = await fetch('https://ill-trousers-crab.cyclic.app/products');
+        const data = await response.json();
+        return data;
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 async function applyFilters() {
@@ -452,7 +445,7 @@ rangeTwo.addEventListener("change",()=>{
 async function getProductsByPrice(min,max) {
 
     try {
-        const response = await fetch(`http://localhost:2528/products/price?min=${min}&max=${max}`)
+        const response = await fetch(`https://ill-trousers-crab.cyclic.app/products/price?min=${min}&max=${max}`)
         const data = await response.json()
         if (data.length) {
             allProductsData = data

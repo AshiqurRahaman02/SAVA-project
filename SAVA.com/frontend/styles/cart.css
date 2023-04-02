@@ -1,6 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
 }
 
 #nav{
@@ -84,6 +85,19 @@ body{
 }
 
 /* main part */
+#main{
+    overflow: auto;
+    max-height: 60vh;
+    overflow-y: scroll;
+}
+#main::-webkit-scrollbar{
+    width: 1px;
+    background-color: #ffffff;
+}
+#main::-webkit-scrollbar-thumb{
+    background-color: #000000;
+    border-radius: 10px;
+}
 
 #main>p{
     font-size: 14px;

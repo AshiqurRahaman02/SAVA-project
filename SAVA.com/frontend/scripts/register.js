@@ -17,7 +17,7 @@ submitButton.addEventListener("click", (e)=>{
         phoneNo: phoneNo.value,
         alternatePhone:alternatePhone.value
     }
-    fetch("http://localhost:2528/users/register",{
+    fetch("https://ill-trousers-crab.cyclic.app/users/register",{
         method: "POST",
         headers: {
             "Content-Type": "application/json"

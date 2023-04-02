@@ -30,7 +30,7 @@ window.addEventListener("load", () => {
 
 
 function getProducts(catagory) {
-    fetch(`http://localhost:2528/products/gender/${catagory}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/gender/${catagory}`)
     .then(response=>response.json())
     .then(data=>{
         if(data.length){
@@ -174,7 +174,7 @@ cancelIcon.addEventListener("click",(e) => {
 })
 
 function getProductsByCategory(catagory) {
-    fetch(`http://localhost:2528/products/category?c=${catagory}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/category?c=${catagory}`)
     .then(response=>response.json())
     .then(data=>{
         console.log(data)
@@ -201,7 +201,7 @@ function getProductsByCategory(catagory) {
 }
 
 function getProductsByName(name) {
-    fetch(`http://localhost:2528/products/name?n=${name}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/name?n=${name}`)
     .then(response=>response.json())
     .then(data=>{
         console.log(data)
@@ -228,7 +228,7 @@ function getProductsByName(name) {
 }
 
 function getProductsByColor(color) {
-    fetch(`http://localhost:2528/products/color?c=${color}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/color?c=${color}`)
     .then(response=>response.json())
     .then(data=>{
         console.log(data)
@@ -259,7 +259,7 @@ function hideDiv() {
 }
 
 function viewProduct(id){
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
    .then(response=>response.json())
    .then(data=>{
     console.log(data)
@@ -312,7 +312,7 @@ const closePopup = (productCategory) => {
 
 function addToCart(id){
     
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
     .then(response=>response.json())
     .then(data=>{
             console.log(data)
@@ -373,7 +373,7 @@ function addtoCartFunction(data){
 
 function addToWishlist(id){
     
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
     .then(response=>response.json())
     .then(data=>{
             console.log(data)

@@ -170,7 +170,7 @@ function deleteProduct(id){
 
 function addToCart(id){
     
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
     .then(response=>response.json())
     .then(data=>{
             console.log(data)
@@ -229,7 +229,7 @@ function addtoCartFunction(data){
 }
 
 function buyProduct(id){
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
     .then(response=>response.json())
     .then(data=>{
         buyProductFunction(data)
@@ -266,7 +266,7 @@ function buyProductFunction(data){
 
 //view product
 function viewProduct(id,quantity){
-    fetch(`http://localhost:2528/products/product/${id}`)
+    fetch(`https://ill-trousers-crab.cyclic.app/products/product/${id}`)
    .then(response=>response.json())
    .then(data=>{
     console.log(data)

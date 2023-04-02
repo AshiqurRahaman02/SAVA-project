@@ -1,5 +1,5 @@
 let userInfo = JSON.parse(localStorage.getItem('userInfo'));
-// let userInfo = null
+
 if(userInfo){
 
     let name = userInfo.name.split(" ")[0];

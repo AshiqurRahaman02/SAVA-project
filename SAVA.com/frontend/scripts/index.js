@@ -7,28 +7,28 @@ if(userInfo){
     let div = document.getElementById("name")
     div.innerHTML = name;
 
-    div.addEventListener("click" , (e)=>{
-        window.location.href = "../pages/account.html"
+    div.addEventListener("click" , ()=>{
+        window.location.href ="./pages/account.html"
     })
 
     let cartData = JSON.parse(localStorage.getItem("cart")) || [];
     document.querySelector(".login>span").innerHTML = cartData.length
 
     document.querySelector(".name").innerHTML = name;
-        document.querySelector(".name").addEventListener("click" , (e)=>{
-            window.location.href = "../pages/account.html"
-        })
+    document.querySelector(".name").addEventListener("click" , ()=>{
+        window.location.href ="./pages/account.html"
+    })
 
     document.querySelector(".cancel>.login span").innerHTML = cartData.length
 }else{
     let div = document.getElementById("name")
 
-    div.addEventListener("click" , (e)=>{
-        window.location.href = "./login.html"
+    div.addEventListener("click" , ()=>{
+        window.location.href = "./pages/login.html"
     })
 
-    document.querySelector(".name").addEventListener("click" , (e)=>{
-        window.location.href = "./login.html"
+    document.querySelector(".name").addEventListener("click" , ()=>{
+        window.location.href = "./pages/login.html"
     })
 }
 
