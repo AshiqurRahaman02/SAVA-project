@@ -1,4 +1,5 @@
-let userInfo = JSON.parse(localStorage.getItem('userInfo'));
+let userInfo = JSON.parse(localStorage.getItem('userInfo')) 
+
 // let userInfo = null
 if(userInfo){
 
@@ -288,15 +289,19 @@ function displayProduct(product,quantity) {
         </div>
         <div>
             <h3 id="name">${product.productName}</h3>
-            <h4 id="ph4">PRICE <span id="price">${product.productPrice}</span></h4>
+            <h4 id="ph4">PRICE <span id="price">&nbsp;&nbsp;₹${product.productPrice}</span></h4>
             <p id="description">${product.productDescription}</p>
-            <p id="genP">FOR <span id="gender">${product.productGender}</span></p>
-            <p id="colP">COLOR <span id="color">${product.productColor}</span></p>
-            <p id="catP">CATEGORY <span id="category">${product.productCategory}</span></p>
+            <p id="genP">FOR <span id="gender">&nbsp;&nbsp;${product.productGender}</span></p>
+            <p id="colP">COLOR <span id="color">&nbsp;&nbsp;${product.productColor}</span></p>
+            <p id="catP">CATEGORY <span id="category">&nbsp;&nbsp;${product.productCategory}</span></p>
             <div>
                 <button id="addToWishlist" onclick="addToWishlist('${product._id}')">ADD TO WISHLIST</button>
             </div>
             <button id="buyNow" onclick="buyProduct('${product}')">BUY NOW</button>
+            <div>
+                <p id="check">CHECK IN-STORE AVAILABILITY</p>
+                <p id="check">DELIVERY, EXCHANGES AND RETURNS</p>
+            </div>
         </div>
         <ion-icon name="close-outline" id="cancel" onclick="closePopup()"></ion-icon>
     `

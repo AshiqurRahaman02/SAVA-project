@@ -132,7 +132,6 @@ body{
     overflow: auto;
     max-height: 70vh;
     overflow-y: scroll;
-    border: #000000 1px solid;
 }
 #right::-webkit-scrollbar{
     visibility: hidden;
@@ -162,6 +161,7 @@ hr{
 }
 p{
     margin-top: 20px;
+    font-size: 13px;
 }
 .address>button{
     width: 100%;
@@ -193,7 +193,6 @@ p{
 #orderDiv{
     display: flex;
     height: 32%;
-    border: 1px solid black;
     width: 70%;
     margin: auto;
     margin-top: 1%;
@@ -211,7 +210,9 @@ p{
 #orderDiv>div:nth-child(2) a{
     color: #000;
 }
-
+#orderDiv>div:nth-child(3){
+    width: 17%;
+}
 #orderDiv>div:nth-child(3) ion-icon{
     color: rgb(40, 221, 40);
 }
@@ -250,11 +251,10 @@ p{
         width: 94%;
     }
     #right{
-        width: 94%;
-        padding-left: 5px;
-    }
-    #right>div{
         width: 100%;
+    }
+    #right>div:nth-child(1){
+        width: 73%;
         margin-bottom: 30px;
     }
 }

@@ -1,5 +1,5 @@
 let userInfo = JSON.parse(localStorage.getItem('userInfo')) || null ;
-if(userInfo.name){
+if(userInfo){
 
     let name = userInfo.name.split(" ")[0];
     let div = document.getElementById("name")
@@ -104,8 +104,15 @@ document.querySelector("#left>div:nth-child(3)").addEventListener("click",()=>{
 function displayAllOrders(allorders){
     let parent=document.querySelector("#right")
 
+    let data =[]
+    
+    for(let i=allorders.length-1; i>=0; i--){
+        data.push(allorders[i])
+    }
+    console.log(data)
+
     let html =""
-    allorders.forEach((order)=>{
+    data.forEach((order)=>{
         let price = order.productPrice*order.quantity
 
         let productName = order.productName;
@@ -120,6 +127,18 @@ function displayAllOrders(allorders){
 
         const options = { month: 'short', day: 'numeric', year: 'numeric' };
         let deliveryDate = after5days.toLocaleString('en-US', options);
+
+        const dateTimestamp = Date.parse(deliveryDate);
+        const currentDateTimestamp = Date.now();
+
+        let line1="ON THE WAY"
+        let line2="EXPECTED BY"
+        let line3="CANCEL DELIVERY"
+        if (dateTimestamp < currentDateTimestamp) {
+            line1 = "DELIVERED"
+            line2 = "DELIVERED ON"
+            line3 = "RETURN"
+        }
         
         html+=`
             <div id="orderDiv" style="width: 70%;">
@@ -128,14 +147,14 @@ function displayAllOrders(allorders){
                 </div>
                 <div>
                     <h3>${productName}</h3>
-                    <p>₹${price}</p>
-                    <p>${order.quantity}</p>
-                    <a> ORDER DATE ${order.orderDate}</a>
+                    <p>TOTAL PRICE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₹${price}</p>
+                    <p>TOTAL QUANTITY    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ${order.quantity}</p>
+                    <a> ORDER DATE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.orderDate}</a>
                 </div>
                 <div>
-                    <h4><ion-icon name="ellipse"></ion-icon>ON THE WAY</h4>
-                    <p>EXPECTED BY <br> ${deliveryDate}</p>
-                    <p>CANCEL DELIVERY</p>
+                    <h4><ion-icon name="ellipse"></ion-icon> ${line1}</h4>
+                    <p>${line2} <br> ${deliveryDate}</p>
+                    <p>${line3}</p>
                     <p>NEED HELP ?</p>
                 </div>
             </div>
