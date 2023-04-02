@@ -38,38 +38,13 @@ if(userInfo){
 let cancel = document.querySelector(".cancel>ion-icon");
 cancel.addEventListener("click", () => {
   document.querySelector("#content").style.display = "none";
-//   fadeOut(document.querySelector(".slider"));
 });
 
 let icon = document.querySelector("#icon");
 icon.addEventListener("click", () => {
   document.querySelector("#content").style.display = "block";
-//   fadeIn(document.querySelector(".slider"));
 });
 
-function fadeIn(element) {
-element.style.opacity = 0;
-let op = 0.1;
-const timer = setInterval(function() {
-    if (op >= 1) {
-    clearInterval(timer);
-    }
-    element.style.opacity = op;
-    op += op * 1;
-}, 10);
-}
-
-function fadeOut(element) {
-let op = 1;
-const timer = setInterval(function() {
-    if (op <= 0.1) {
-    clearInterval(timer);
-    element.style.display = "none";
-    }
-    element.style.opacity = op;
-    op -= op * 0.1;
-}, 10);
-}
 
 
 
@@ -196,5 +171,5 @@ setInterval(() => {
         document.querySelector(".news p").style.visibility = "hidden";
         document.querySelector(".social").style.visibility = "hidden";
     },2500)
-}, 10000);
+}, 7500);
 

@@ -55,7 +55,7 @@ function loginFunction(){
     .then(res=>{
         localStorage.setItem("token", res.token)
         localStorage.setItem("userInfo",JSON.stringify(res.user))
-        window.location.href = "../pages/index.html"
+        window.location.href = "../index.html"
     })
     .catch(err=>console.log(err))
 }
