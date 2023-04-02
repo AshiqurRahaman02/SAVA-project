@@ -182,3 +182,11 @@ input[type=number]::-webkit-outer-spin-button {
  .popup-open {
     backdrop-filter: blur(55px);
   }
+
+  /* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+    }
+}

@@ -99,3 +99,11 @@ button{
     background-color: black;
     cursor: pointer;
 }
+
+/* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+    }
+}

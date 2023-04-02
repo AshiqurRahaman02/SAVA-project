@@ -315,3 +315,11 @@ body{
     color: rgb(0, 0, 0);
     font-size: larger;
  }
+
+ /* for lerger screen */
+@media (min-width:1585px) {
+    body{
+        width: 1585px ;
+        margin: auto;
+    }
+}
