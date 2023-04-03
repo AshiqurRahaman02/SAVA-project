@@ -1,5 +1,8 @@
 # SAVA.com
 
+
+![favicon](https://user-images.githubusercontent.com/119414454/229445573-a42445f9-ee6b-44c3-b38d-b1aa1fd489de.png)
+
 SAVA is your ultimate fashion destination for trendy and stylish clothing and accessories. Our latest collections are inspired by the hottest fashion trends of the season, ensuring that you stay ahead of the fashion game. We understand that fashion is an expression of your individuality, and that's why we offer a diverse range of products that cater to different tastes and styles.
 
 Our website is the result of a 5-day project week, during which we drew inspiration from the world-renowned fashion brand, ZARA. We used ZARA products to create our collections, and we're proud of the result.
