@@ -147,12 +147,36 @@ searchIcon.addEventListener("click",(e) => {
 
     if(catagory.toUpperCase() == "PERFUME" || catagory.toUpperCase() == "SHOES" || catagory.toUpperCase() == "LIPSTICK" || catagory.toUpperCase() == "") {
         getProductsByCategory(catagory.toUpperCase())
-    }else{
+    }else
+    if(catagory.length<=7){
         getProductsByColor(catagory.toUpperCase())
+    }else{
+        getProductsByName(catagory)
+    }
+    
+    if(!catagory){
+        getProducts("WOMAN")
+    }else{
+        document.querySelector("#main>p").innerText = `You searched for ${catagory}`
     }
 
-    // getProductsByCategory(catagory.toUpperCase())
-    // getProductsByName(catagory)
+})
+searchInput.addEventListener("change",(e) => {
+    e.preventDefault()
+
+    searchIcon.style.display = "none"
+    cancelIcon.style.display = "block"
+    console.log(searchInput.value)
+    let catagory = searchInput.value
+
+    if(catagory.toUpperCase() == "PERFUME" || catagory.toUpperCase() == "SHOES" || catagory.toUpperCase() == "LIPSTICK" || catagory.toUpperCase() == "") {
+        getProductsByCategory(catagory.toUpperCase())
+    }else
+    if(catagory.length<=7){
+        getProductsByColor(catagory.toUpperCase())
+    }else{
+        getProductsByName(catagory)
+    }
     
     if(!catagory){
         getProducts("WOMAN")

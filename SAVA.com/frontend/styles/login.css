@@ -137,6 +137,7 @@ form~a{
     transform: translate(-50% , -50%) scale(0.1);
     visibility: hidden;
     transition: transform 0.4s , top 0.4s;
+    border: #e2e2e2 1px solid;
  }
  .openpopup{
     visibility: visible;
@@ -181,6 +182,30 @@ input[type=number]::-webkit-outer-spin-button {
 
  .popup-open {
     backdrop-filter: blur(55px);
+  }
+
+  .loading {
+    position: relative;
+    margin: auto;
+    margin-top: 40%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px dotted #111111 ;
+    border-top-color: #ffffff;
+    border-left-color: #777777;
+    border-right-color: #ffffff;
+    border-width: 10px;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  #load>p{
+    position: relative;
+    font-size: 50px;
+    color: white;
   }
 
   /* for lerger screen */

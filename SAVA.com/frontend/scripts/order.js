@@ -148,6 +148,7 @@ let orderBtn = document.querySelector("#order");
 
 orderBtn.addEventListener("click", ()=>{
     let allOrders = JSON.parse(localStorage.getItem("allOrders")) || [];
+    let data = JSON.parse(localStorage.getItem("order")) || [];
 
     orderBtn.innerHTML = "ORDER PLACED"
     displayOrder(data.length)

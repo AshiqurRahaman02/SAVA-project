@@ -96,7 +96,7 @@ function display(allProducts ) {
                 </div>
                 <div id="div2">
                     <div><button onclick="incQuantity('${product._id}')" id="btn">+</button> <span>${product.quantity}</span> <button onclick="decQuantity('${product._id}')" id="btn">-</button></div>
-                 <span id="buy"  onclick="buyProduct('${product._id}')">BUY NOW</span><span id="delete" onclick="deleteProduct('${product._id}')">REMOVE</span> 
+                 <span id="buy"  onclick="buyProduct('${product._id}')">BUY NOW</span><span id="delete" onclick="deleteProduct('${product._id}','cart')">REMOVE</span> 
                 </div>
             </div>
         </div>
@@ -133,7 +133,7 @@ function displayWishlist(data){
                 </div>
                 <div id="div2">
                 <span id="addToCart" onclick="addToCart('${product._id}')">ADD TO CART</span>
-                 <span id="buy" onclick="buyProduct('${product._id}')">BUY NOW</span><span id="delete" onclick="deleteProduct('${product._id}')">REMOVE</span> 
+                 <span id="buy" onclick="buyProduct('${product._id}')">BUY NOW</span><span id="delete" onclick="deleteProduct('${product._id}','wishlist')">REMOVE</span> 
                 </div>
             </div>
         </div>
@@ -160,12 +160,24 @@ function decQuantity(id){
     getCartProduct();
 }
 
-function deleteProduct(id){
-    let data = JSON.parse(localStorage.getItem("cart")) || [];
-    let index = data.findIndex(product => product._id === id);
-    data.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(data));
-    getCartProduct();
+function deleteProduct(id,page){
+    
+    
+    if(page=="cart"){
+        let data = JSON.parse(localStorage.getItem("cart")) || [];
+        let index = data.findIndex(product => product._id === id);
+        data.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(data));
+        getCartProduct();
+    }else
+    if(page== "wishlist"){
+        let data = JSON.parse(localStorage.getItem("wishlist")) || [];
+        let index = data.findIndex(product => product._id === id);
+        data.splice(index, 1);
+        localStorage.setItem("wishlist", JSON.stringify(data));
+        console.log(page)
+        getWishlistProduct()
+    }
 }
 
 function addToCart(id){

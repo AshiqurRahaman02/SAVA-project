@@ -24,7 +24,14 @@ loginBtn.addEventListener('click', (e) => {
                     let otpInput = i1.value + i2.value + i3.value + i4.value
                 
                     if(otpInput == otpNumber){
-                        popup.classList.remove("openpopup")
+                        // popup.classList.remove("openpopup")
+
+                        popup.innerHTML=`
+                            <div id="load">
+                                <div class="loading"></div>
+                                <p>LOADING</p>
+                            </div>
+                        `
 
                         loginFunction()
                         

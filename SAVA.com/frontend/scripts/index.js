@@ -155,7 +155,7 @@ function changeBackground() {
   if(width>950){
     body.style.backgroundImage = `url(${images[index]})`;
   }else if(width>500){
-    body.style.backgroundImage = `url("../images/middium\ background.png")`;
+    body.style.backgroundImage = `url("./images/middium\ background.png")`;
   }
 
   index = (index + 1) % images.length;
